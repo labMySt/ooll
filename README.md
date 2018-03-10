@@ -2,6 +2,6 @@
 
  npm install;   
  PORT=3001 node bin/www;   
- (in other console);
- cd client;   
+ cd client (in ather console);   
+ npm install;   
  npm start;   
