@@ -12,6 +12,11 @@
     "express": "~4.15.5",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
     "serve-favicon": "~2.4.5"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.4.1"
   }
 }
