@@ -13,11 +13,8 @@ class App extends Component {
 
     render() {
         return (
-            <div>
-                <Header items={this.state.users} />
-            </div>
+            <Header items={this.state.users} />
         );
     }
 }
-
 export default App;

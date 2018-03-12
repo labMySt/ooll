@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import BasicExample from "./components/App";
 
-ReactDOM.render(<BasicExample />, document.getElementById("app"));
+ReactDOM.render(<BasicExample />, document.getElementById("navbarNavDropdown"));
 
 
 // import React from 'react';

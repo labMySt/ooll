@@ -11,8 +11,17 @@ router.get('/', function(req, res, next) {
         link: '/home',
         label: 'Home'
     }, {
-        link: '/login',
-        label: 'Login'
+        link: '/features',
+        label: 'Features'
+    }, {
+        link: '/templates',
+        label: 'Templates'
+    }, {
+        link: '/support',
+        label: 'Support'
+    }, {
+        link: '/sign_up',
+        label: 'Sign up'
     }]);
 });
 
