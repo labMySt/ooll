@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class Header extends Component {
+    state = {users: []};
+
+    componentDidMount() {
+        fetch('/heater_menu')
+            .then(res => res.json())
+            .then(users => this.setState({ users }));
+    }
     render() {
-        console.log("111", this.props.items);
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-right">
                 <a className="navbar-brand" href="#">OOLL</a>
@@ -11,16 +18,36 @@ class Header extends Component {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav">
-                        {this.props.items.map((item, index) =>
-                            <li className={item.class}>
-                                <a className="nav-link" href={item.link} key={index}>{item.label}</a>
+
+                        {this.state.users.map((item, index) =>
+                            <li className={item.class} key={index}>
+                                <Link className="nav-link" to={item.link} key={index}>{item.label}</Link>
                             </li>
                         )}
                     </ul>
                 </div>
             </nav>
+
         );
     }
 }
 
 export default Header;
+
+// import React from 'react'
+// import { Link } from 'react-router-dom'
+//
+// const Header = () => (
+//     <header>
+//         <nav>
+//             <ul>
+//                 <li><Link to='/'>Home</Link></li>
+//                 <li><Link to='/sign_up'>Sign up</Link></li>
+//                 <li><Link to='/test'>Test</Link></li>
+//                 <li><Link to='/caffee/100'>Caffee</Link></li>
+//             </ul>
+//         </nav>
+//     </header>
+// );
+//
+// export default Header
