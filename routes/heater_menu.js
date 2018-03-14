@@ -8,10 +8,6 @@ router.get('/', function(req, res, next) {
 
     // And insert something like this instead:
     res.json([{
-        class: 'nav-item active',
-        link: '/home',
-        label: 'Home'
-    }, {
         class: 'nav-item',
         link: '/features',
         label: 'Features'

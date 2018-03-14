@@ -2,7 +2,7 @@ import React from 'react'
 
 const Test = () => (
     <div>
-        Test
+        <h1>Features</h1>
     </div>
 );
 
