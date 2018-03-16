@@ -8,4 +8,4 @@ var userSchema = new Schema({
   password: String
 });
 
-mongoose.model("User", userSchema);
+mongoose.model("Users", userSchema);

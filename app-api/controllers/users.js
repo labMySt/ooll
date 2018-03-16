@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
-var Users = mongoose.model('User');
-
+var User = mongoose.model("Users");
 
 var sendJSONResponse = function(res, status, content) {
 	res.status(status);
@@ -8,25 +7,23 @@ var sendJSONResponse = function(res, status, content) {
 };
 
 module.exports.usersCreate = function(req, res) {
-	Users.create({
+	User.create({
 		  name: req.body.name,
 		  email: req.body.email,
 		  password: req.body.password
 	  },
-      function(err, location) {
+      function(err, user) {
 		    if(err) {
 			    sendJSONResponse(res, 400, err);
 		    } else {
-			    sendJSONResponse(res, 201, {
-        "nessage": "no user"
-      });
+			    sendJSONResponse(res, 201, user);
 		}
 	});
-};
+}
 
 module.exports.usersReadOne = function(req, res) {
 	if(req.params && req.params.id) {
-		Users
+		User
 		.findById(req.params.id)
 		.exec(function(err, location) {
 			if(!location) {
@@ -71,7 +68,7 @@ module.exports.usersUpdateOne = function(req, res) {
 module.exports.usersDeleteOne = function(req, res) {
 	var id = req.params.id;
 	if(id) {
-		Users
+		User
 			.findByIdAndRemove(id)
 			.exec(function(err, location) {
 				if(err) {
