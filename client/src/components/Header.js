@@ -12,7 +12,7 @@ class Header extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-right">
-                <a className="navbar-brand" href="#">OOLL</a>
+                <a className="navbar-brand" href="/">OOLL</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"/>
                 </button>
@@ -33,21 +33,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-// import React from 'react'
-// import { Link } from 'react-router-dom'
-//
-// const Header = () => (
-//     <header>
-//         <nav>
-//             <ul>
-//                 <li><Link to='/'>Home</Link></li>
-//                 <li><Link to='/sign_up'>Sign up</Link></li>
-//                 <li><Link to='/test'>Test</Link></li>
-//                 <li><Link to='/caffee/100'>Caffee</Link></li>
-//             </ul>
-//         </nav>
-//     </header>
-// );
-//
-// export default Header

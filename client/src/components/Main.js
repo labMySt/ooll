@@ -1,21 +1,14 @@
-import React from 'react'
-import { Switch, Route } from 'react-router-dom'
-import Welcome from "./Welcome";
-import SignUp from "./SignUp";
-import Test from "./Features";
-import Templates from "./Templates";
-import Support from "./Support";
+import React from 'react';
+import { Link } from 'react-router-dom'
 
 const Main = () => (
-    <main>
-        <Switch>
-            <Route exact path='/' component={Welcome}/>
-            <Route path='/features' component={Test}/>
-            <Route path='/templates' component={Templates}/>
-            <Route path='/support' component={Support}/>
-            <Route path='/sign_up' component={SignUp}/>
-        </Switch>
-    </main>
+    <div className="main">
+        <div className="content">
+            <h1>Все начинается с&nbsp;великолепного сайта</h1>
+            <p>Дизайн и продвинутые технологии OOLL помогут создать сайт вашей мечты. Легко и бесплатно.</p>
+            <Link className="link bi cta" id="mainCta" to="/sign_up" fold-name="1" target="_top">Создать сайт</Link>
+        </div>
+    </div>
 );
 
-export default Main
+export default Main;
