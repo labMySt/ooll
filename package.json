@@ -10,15 +10,14 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
+    "express-jwt": "^5.3.1",
     "jade": "~1.11.0",
+    "jsonwebtoken": "^8.2.0",
+    "jwt-express": "^1.1.0",
+    "lodash": "^4.17.5",
     "mongodb": "^3.0.4",
     "mongoose": "^5.0.10",
     "morgan": "~1.9.0",
-    "react-redux": "^5.0.7",
-    "redux": "^3.7.2",
     "serve-favicon": "~2.4.5"
-  },
-  "devDependencies": {
-    "redux-devtools": "^3.4.1"
   }
 }

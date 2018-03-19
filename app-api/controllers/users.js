@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
 var User = mongoose.model("Users");
+var jwt = require('jsonwebtoken');
+var GetToken = require("../auth/generateToken");
+var verifyToken = require("../auth/verifyToken");
 
 var sendJSONResponse = function(res, status, content) {
 	res.status(status);
@@ -7,21 +10,29 @@ var sendJSONResponse = function(res, status, content) {
 };
 
 module.exports.usersCreate = function(req, res) {
-	User.create({
+	const newUser = {
 		  name: req.body.name,
 		  email: req.body.email,
 		  password: req.body.password
-	  },
-      function(err, user) {
+	  };
+	User.create(newUser, function(err, user) {
 		    if(err) {
 			    sendJSONResponse(res, 400, err);
 		    } else {
-			    sendJSONResponse(res, 201, user);
+				 const token = GetToken(newUser);
+			    sendJSONResponse(res, 201, {token: token});
 		}
 	});
+
 }
 
 module.exports.usersReadOne = function(req, res) {
+	// jwt.verify(req.token,'SICRET_KEY', function(err, done){
+  //   if(err){
+  //     res.status(500).send();
+  //   }
+  //   else {
+
 	if(req.params && req.params.id) {
 		User
 		.findById(req.params.id)
@@ -43,6 +54,8 @@ module.exports.usersReadOne = function(req, res) {
 			"message": "No id"
 		});
 	}
+// }
+// });
 }
 
 module.exports.usersUpdateOne = function(req, res) {

@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 require('./app-api/models/db');
 
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var heater_menu = require('./routes/heater_menu');
@@ -14,6 +15,7 @@ var routesApi = require('./app-api/routes/index');
 
 var app = express();
 
+var SICRET_KEY = "SDFASDF";
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
