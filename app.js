@@ -8,7 +8,7 @@ require('./app-api/models/db');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var heater_menu = require('./routes/heater_menu');
+var header_menu = require('./routes/header_menu');
 
 var routesApi = require('./app-api/routes/index');
 
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/api', routesApi);
 app.use('/users', users);
-app.use('/heater_menu', heater_menu);
+app.use('/header_menu', header_menu);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

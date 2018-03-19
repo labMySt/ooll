@@ -3,6 +3,23 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+/*!
+ * Header
+ */
+.header{
+    background-color: rgb(239, 237, 237) !important;
+    width: 100%;
+}
+.header li{
+    padding-right: 19%;
+}
+.logo{
+    padding-left: 70px;
+    padding-right: 70px;
+}
+/*!
+ *
+ */
 #app{
     background: url(static/mountains-962793_960_720.jpg) no-repeat;
     background-size: cover;
