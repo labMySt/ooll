@@ -1,53 +1,40 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import logo from '../static/logo.png';
 
 class Header extends Component {
-    state = {users: []};
+    state = {links: []};
 
     componentDidMount() {
-        fetch('/heater_menu')
+        fetch('/header_menu')
             .then(res => res.json())
-            .then(users => this.setState({ users }));
+            .then(links => this.setState({ links }));
     }
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-right">
-                <a className="navbar-brand" href="#">OOLL</a>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-right header">
+
+                <div className="logo" >
+                    <a className="navbar-brand" href="/" title="ooll">
+                        <img src={logo} className="App-logo" alt="logo" />
+                    </a>
+                </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"/>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul className="navbar-nav">
+                    <ul className="navbar-nav row header-links">
 
-                        {this.state.users.map((item, index) =>
+                        {this.state.links.map((item, index) =>
                             <li className={item.class} key={index}>
-                                <Link className="nav-link" to={item.link} key={index}>{item.label}</Link>
+                                <Link className="header-link" to={item.link} key={index}>{item.label}</Link>
                             </li>
                         )}
                     </ul>
                 </div>
             </nav>
-
         );
     }
 }
 
 export default Header;
-
-// import React from 'react'
-// import { Link } from 'react-router-dom'
-//
-// const Header = () => (
-//     <header>
-//         <nav>
-//             <ul>
-//                 <li><Link to='/'>Home</Link></li>
-//                 <li><Link to='/sign_up'>Sign up</Link></li>
-//                 <li><Link to='/test'>Test</Link></li>
-//                 <li><Link to='/caffee/100'>Caffee</Link></li>
-//             </ul>
-//         </nav>
-//     </header>
-// );
-//
-// export default Header
