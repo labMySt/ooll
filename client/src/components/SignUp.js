@@ -1,11 +1,22 @@
 import React from 'react'
 import Header from "./Header";
+import '../styles/register.css';
+import RegisterSingIn from "./RegisterSingIn";
 
-const Signup = () => (
-    <div>
-        <Header />
-        <h1>Signup</h1>
-    </div>
-);
+class SignUp extends React.Component{
 
-export default Signup
+
+  render(){
+    return(
+      <div className = "register-div">
+        <RegisterSingIn/>
+
+      </div>
+    )
+  }
+}
+
+
+
+
+export default SignUp

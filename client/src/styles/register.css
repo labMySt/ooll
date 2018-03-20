@@ -1,0 +1,71 @@
+.register-div{
+  width: 758px;
+  height: 524px;
+
+}
+
+.sign-in{
+  width: 393px;
+  height: 524px;
+  border: 1px;
+  border-color: lack;
+  border-style: solid;
+}
+.sign-in-text{
+  margin-top: 75px;
+  margin-left: 45px;
+  width: 300px;
+  height: 300px;
+  text-align:center;
+  /* margin: auto; */
+  font-family: Cambria Math;
+  font-size: 24px;
+}
+
+.sign-in-close{
+  width: 15px;
+  height: 15px;
+  float: right;
+  background: url("../static/register/close.png");
+  margin-right: 21px;
+  margin-top: 20px;
+}
+.sign-in-form{
+  margin-top:8px;
+}
+
+.sign-in-form-text{
+  border: 1px;
+  border-color: black;
+  border-style:solid;
+  margin-top: 33px;
+  width: 277px;
+}
+.sign-in-text-welcome{
+  margin-top: 35px;
+  text-align:center;
+  font-family: Cambria Math;
+  font-size: 14px;
+}
+.sign-in-box-icons{
+  margin: auto;
+  margin-top: 24px;
+  width: 155px;
+  display: flex;
+  justify-content:space-around;
+}
+.sign-in-button{
+  margin: auto;
+  margin-top: 29px;
+  width: 280px;
+  height: 64px;
+  background-color: #262525;
+  text-align: center;
+  font-size:24px;
+  color: white;
+
+}
+.sign-in-button-text{
+  height: 12px;
+
+}
