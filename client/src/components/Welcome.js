@@ -1,12 +1,19 @@
 import React from 'react';
+import Header from "./Header";
+import { Link } from 'react-router-dom';
+import PopularTemplates from "./PopularTemplates";
+import Footer from "./Footer";
 
 const Welcome = () => (
-    <div className="content">
-        <h1>Все начинается с&nbsp;великолепного сайта</h1>
-        <p>Дизайн и продвинутые технологии OOLL помогут создать сайт вашей мечты. Легко и бесплатно.</p>
-        <a className="link bi cta" id="mainCta" href="#" fold-name="1" target="_top">
-            Создать сайт
-        </a>
+    <div className="welcome">
+        <Header />
+        <div className="landing">
+            <h1>Створити свій сайт школи</h1>
+            <Link className="link-create" to="">Створити</Link>
+            <Link className="link-choose" to="/templates">Вибрати готовий</Link>
+        </div>
+        <PopularTemplates />
+        <Footer />
     </div>
 );
 

@@ -1,60 +1,166 @@
+@font-face{
+    font-family:'Cambria Math';
+    src:url('fonts/CambriaMath.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
-#app{
-    background: url(static/mountains-962793_960_720.jpg) no-repeat;
-    background-size: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+/*!
+ * Header
+ */
+
+.header a{
+    color: black !important;
 }
-.content{
-    text-align: center;
-    position: fixed;
-    top: 40%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.content, h1, p{
-    color: #ffffff;
-    padding-bottom: 10px;
-}
-@media (max-width: 1100px){
-    #app .cta {
-        font-size: 14px;
+@media (min-width: 992px) {
+    .header{
+        background-color: rgba(249, 248, 248, 0) !important;
+        width: 100%;
+        height: 130px;
+    }
+    .header-link:hover{
+        text-decoration: none;
+        border-bottom: 2px solid rgb(42,128,116);
+    }
+    .App-logo{
+        padding-left: 162px;
+        padding-bottom: 65px;
+        width: 93%;
+    }
+    #navbarNavDropdown{
+        width: 100%;
+    }
+    .nav-item{
+        padding-left: 70px;
+    }
+    .nav-link{
+        padding: 0;
+    }
+    .header-links {
+        width: 97%;
+        padding-bottom: 56px;
+        padding-left: 18px;
     }
 }
-
-@media (max-width: 1440px){
-        #app .cta {
-            font-size: 16px;
-        }
+@media (max-width: 991px) {
+    .header{
+        background-color:  rgb(249, 248, 248) !important;
+        width: 100%;
+        height: 70px;
+    }
+    .App-logo{
+        height: 45px;
+        padding-left: 40px;
+    }
+    .header-links{
+        background-color: rgba(249, 248, 248, 0.77) !important;
+    }
 }
+/*!
+ * welcome
+ */
+.welcome{
+    background:  rgb(167, 213, 206) !important;
+}
+.landing{
+    height: 550px;
+    background: url("static/pc.png") no-repeat;
 
-#app .cta {
-    font-size: 20px;
-    cursor: pointer;
-    background: 0 0;
-    width: initial;
-    padding: 1.452vh 2.96vw;
-    border-radius: 40px;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    transition: all .2s ease-in-out;
+}
+.landing h1{
+    padding-left: 185px;
+    padding-top: 125px;
+}
+.link-create{
+    margin: 63px 0 0 143px;
+    font-size: 34px;
+    padding: 25px 44px;
     display: inline-block;
-    margin: 0;
-    -webkit-animation: ctaInAnimation .3s linear forwards;
-    animation: ctaInAnimation .3s linear forwards;
-    box-shadow: 0 0 1px -1px #ffffff;
     text-decoration: none;
+    background: rgb(42,128,116);
+    -o-text-overflow: ellipsis;
+    color: #fcf3f4;
+    line-height: 36px;
+}
+.link-choose{
+    font-size: 34px;
+    padding: 25px 18px;
+    display: inline-block;
+    text-decoration: none;
+    -o-text-overflow: ellipsis;
+    color: black;
+    line-height: 36px;
+    border: 1px solid black;
+    margin-left: 35px;
 }
 
-#app .cta:hover {
-    background: rgba(227, 153, 24, 0.82);
-    transition: .6s;
+/*!
+ * PopularTemplates
+ */
+.popular-templates{
+    background: #f5f1f0 !important;
+    height: 1000px;
+}
+/*!
+ * Page All Templates
+ */
+.content-templates{
+    height: 643px;
+}
+.templates a{
+    color: black !important;
+    padding: 0 20px;
+}
+.template-link:hover{
+    text-decoration: none;
+    border-bottom: 2px solid rgb(42,128,116);
+}
+.content-templates h5{
+    padding-left: 154px;
+    padding-top: 33px;
+    color: black;
+    font-weight:bold;
+}
+.content-templates hr{
+    margin-top: 8px;
+    width: 23px;
+    position: absolute;
+    margin-left: 156px;
+    border-top: 2px solid black;
+}
+ul.hor_nav {
+    padding-left: 115px;
+    padding-top: 62px;
+    margin: 0;
+}
+ul.hor_nav li {
+    display: inline;
+    padding-left: 50px;
+}
+.templates-table{
+    padding: 46px 143px 0 150px
+}
+.template{
+    text-align: center;
+}
+.template img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.template a{
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px;
+}
+
+/*!
+ * Footer
+ */
+.footer{
+    background: black;
+    height: 180px;
 }

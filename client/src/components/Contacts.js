@@ -1,11 +1,11 @@
 import React from 'react'
 import Header from "./Header";
 
-const Support = () => (
+const Contacts = () => (
     <div>
         <Header />
-        <h1>Support</h1>
+        <h1>contacts</h1>
     </div>
 );
 
-export default Support
+export default Contacts

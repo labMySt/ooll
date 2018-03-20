@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 import Main from './components/Main'
 import Signup from "./components/SignUp";
-import Test from "./components/Features";
+import Test from "./components/Contacts";
 
 const routes=(
     <BrowserRouter >
