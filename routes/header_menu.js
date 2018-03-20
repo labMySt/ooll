@@ -8,19 +8,19 @@ router.get('/', function(req, res, next) {
 
     // And insert something like this instead:
     res.json([{
-        class: 'nav-item',
+        class: 'nav-item col-lg-3',
         link: '/templates',
         label: 'Шаблони'
     }, {
-        class: 'nav-item',
+        class: 'nav-item col-lg-3',
         link: '/contacts',
         label: 'Контакти'
     }, {
-        class: 'nav-item',
+        class: 'nav-item col-lg-3',
         link: '/help',
         label: 'Допомога'
     }, {
-        class: 'nav-item',
+        class: 'nav-item col-lg-3',
         link: '/sign_up',
         label: 'Вхід'
     }]);
