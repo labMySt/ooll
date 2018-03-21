@@ -4,6 +4,7 @@
     padding-top: 30px;
     height: 238px;
     font-family: Cambria Math;
+    position: relative;
 }
 
 #myFooter ul {
@@ -35,7 +36,9 @@
 .footer-links{
     font-size: 21px;
 }
-
+.footer-links a{
+    color: #f9f8f8 !important;
+}
 .footer-info{
     font-size: 16px;
 }
