@@ -10,57 +10,6 @@ body {
   font-family: sans-serif;
 }
 /*!
- * Header
- */
-
-.header a{
-    color: black !important;
-}
-@media (min-width: 992px) {
-    .header{
-        background-color: rgba(249, 248, 248, 0) !important;
-        width: 100%;
-        height: 130px;
-    }
-    .header-link:hover{
-        text-decoration: none;
-        border-bottom: 2px solid rgb(42,128,116);
-    }
-    .App-logo{
-        padding-left: 162px;
-        padding-bottom: 65px;
-        width: 93%;
-    }
-    #navbarNavDropdown{
-        width: 100%;
-    }
-    .nav-item{
-        padding-left: 70px;
-    }
-    .nav-link{
-        padding: 0;
-    }
-    .header-links {
-        width: 97%;
-        padding-bottom: 56px;
-        padding-left: 18px;
-    }
-}
-@media (max-width: 991px) {
-    .header{
-        background-color:  rgb(249, 248, 248) !important;
-        width: 100%;
-        height: 70px;
-    }
-    .App-logo{
-        height: 45px;
-        padding-left: 40px;
-    }
-    .header-links{
-        background-color: rgba(249, 248, 248, 0.77) !important;
-    }
-}
-/*!
  * welcome
  */
 .welcome{
@@ -109,7 +58,9 @@ body {
  * Page All Templates
  */
 .content-templates{
-    height: 643px;
+    height: 100%;
+    padding-bottom: 50px;
+
 }
 .templates a{
     color: black !important;
@@ -155,12 +106,4 @@ ul.hor_nav li {
     text-decoration: none;
     font-size: 13px;
     padding: 5px;
-}
-
-/*!
- * Footer
- */
-.footer{
-    background: black;
-    height: 180px;
 }
