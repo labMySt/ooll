@@ -3,12 +3,7 @@ import '../styles/footer.css';
 import facebook from "../static/footer/facebook.png"
 import linkedin from "../static/footer/linkedin.png"
 import twitter from "../static/footer/twitter.png"
-
-
-const foterMenu = [
-    
-];
-
+import { Link } from 'react-router-dom';
 
 class Footer extends React.Component{
     render(){
