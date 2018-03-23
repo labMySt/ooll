@@ -1,0 +1,43 @@
+.howitwork{
+    width: 1540px;
+    height: 800px;
+    background-color:#e9e7e7;
+    margin:auto;
+}
+.howitwork-top > p{
+    font-family: Cambria Math;
+    font-size: 30px;
+    margin-left:10px;
+    font-weight: bold;
+}
+
+.howitwork-tutorial{
+    width:100%;
+    height:160px;
+    
+}
+
+.bl-tutor{
+    display: inline-block;
+    width: 255px;
+    height: 200px;
+}
+
+.bl-tutor > p{
+    font-family: Cambria Math;
+    display: block;
+    font-size: 30px;
+    margin-left:10px;
+    font-weight: bold;
+}
+
+.b2-tutor{
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+    width: 255px;
+    height: 200px;
+    font-family: Cambria Math;
+    font-size: 24px;
+    text-align: center;    
+}

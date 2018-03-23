@@ -3,6 +3,7 @@ import Header from "./Header";
 import { Link } from 'react-router-dom';
 import PopularTemplates from "./PopularTemplates";
 import Footer from "./Footer";
+import HowItWork from "./HowItWork";
 
 const Welcome = () => (
     <div className="welcome">
@@ -13,6 +14,7 @@ const Welcome = () => (
             <Link className="link-choose" to="/templates">Вибрати готовий</Link>
         </div>
         <PopularTemplates />
+        <HowItWork/>
         <Footer />
     </div>
 );
