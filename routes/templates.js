@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var config = require('config');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -11,20 +11,39 @@ router.get('/', function(req, res, next) {
     res.json([{
         link: '/templates',
         label: 'Віща школа у Британії',
-        img: './uploads/templates/hhh.png'
+        img: config.get('Img.img_server') + './templates/hhh.png'
     }, {
         link: '/templates',
         label: 'Віща школа у Британії',
-        //todo img_server
-        img: './uploads/templates/hhh.png'
+        img: config.get('Img.img_server') + './templates/hhh.png'
     }, {
         link: '/templates',
         label: 'Віща школа у Британії',
-        img: '../uploads/templates/hhh.png'
+        img: config.get('Img.img_server') + './templates/hhh.png'
+    },  {
+        link: '/templates',
+        label: 'Віща школа у Британії',
+        img: config.get('Img.img_server') + './templates/hhh.png'
     }, {
         link: '/templates',
         label: 'Віща школа у Британії',
-        img: '../uploads/templates/hhh.png'
+        img: config.get('Img.img_server') + './templates/hhh.png'
+    }, {
+        link: '/templates',
+        label: 'Віща школа у Британії',
+        img: config.get('Img.img_server') + './templates/hhh.png'
+    }, {
+        link: '/templates',
+        label: 'Віща школа у Британії',
+        img: config.get('Img.img_server') + './templates/hhh.png'
+    }, {
+        link: '/templates',
+        label: 'Віща школа у Британії',
+        img: config.get('Img.img_server') + './templates/hhh.png'
+    }, {
+        link: '/templates',
+        label: 'Віща школа у Британії',
+        img: config.get('Img.img_server') + './templates/hhh.png'
     }]);
 });
 

@@ -1,0 +1,6 @@
+{
+  // Img module configs
+  "Img": {
+    "img_server":"http://localhost:3001/img/"
+  }
+}

@@ -42,32 +42,6 @@ class Templates extends Component {
                             </div>
                         )}
                     </div>
-
-                    <div className="row templates-table">
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="template">
-                                <img src={img} />
-                                <a href="#">Віща школа у Британії</a>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="template">
-                                <img src={img} />
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="template">
-                                <img src={img} />
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="template">
-                                <img src={img} />
-                            </div>
-                        </div>
-                    </div>
-
-
                 </div>
                 <Footer />
             </div>
