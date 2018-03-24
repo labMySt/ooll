@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var User = mongoose.model("Users");
+var User = require('../models/user');
 
 var sendJSONResponse = function(res, status, content) {
 	res.status(status);
@@ -7,19 +7,50 @@ var sendJSONResponse = function(res, status, content) {
 };
 
 module.exports.usersCreate = function(req, res) {
-	User.create({
-		  name: req.body.name,
-		  email: req.body.email,
-		  password: req.body.password
-	  },
-      function(err, user) {
-		    if(err) {
-			    sendJSONResponse(res, 400, err);
-		    } else {
-			    sendJSONResponse(res, 201, user);
-		}
-	});
+	
+	if (req.body.password !== req.body.passwordConf) {
+    var err = new Error('Passwords do not match.');
+    err.status = 400;
+    res.send("passwords dont match");
+    return next(err);
+  }
+
+  if (req.body.email &&
+    req.body.password &&
+    req.body.passwordConf) {
+
+    var userData = {
+      email: req.body.email,
+      password: req.body.password
+    }
+
+    User.create(userData, function (error, user) {
+      if (error) {
+        sendJSONResponse(res, 404, {"message": "can`t create user`"});
+      } else {
+        req.session.userId = user._id;
+        sendJSONResponse(res, 200, user);
+      }
+    });
+
+  } else if (req.body.logemail && req.body.logpassword) {
+    User.authenticate(req.body.logemail, req.body.logpassword, function (error, user) {
+      if (error || !user) {
+        var err = new Error('Wrong email or password.');
+        err.status = 401;
+        return next(err);
+      } else {
+        req.session.userId = user._id;
+        sendJSONResponse(res, 200, user);
+      }
+    });
+  } else {
+    var err = new Error('All fields required.');
+    err.status = 400;
+    sendJSONResponse(res, 404, err);
+  }
 }
+
 
 module.exports.usersReadOne = function(req, res) {
 	if(req.params && req.params.id) {
