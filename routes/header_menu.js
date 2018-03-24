@@ -19,6 +19,10 @@ router.get('/', function(req, res, next) {
         class: 'nav-item col-lg-3',
         link: '/help',
         label: 'Допомога'
+    }, {
+        class: 'nav-item col-lg-3',
+        link: '/sign_up',
+        label: 'Вхід'
     }]);
 });
 

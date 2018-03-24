@@ -1,5 +1,4 @@
 var mongoose = require("mongoose");
-
 var URIooll = "mongodb://localhost:27017/ooll";
 mongoose.connect(URIooll);
 
