@@ -7,7 +7,7 @@ var sendJSONResponse = function(res, status, content) {
 };
 
 module.exports.usersCreate = function(req, res) {
-
+	
 	if (req.body.password !== req.body.passwordConf) {
     var err = new Error('Passwords do not match.');
     err.status = 400;
@@ -23,7 +23,6 @@ module.exports.usersCreate = function(req, res) {
       email: req.body.email,
       password: req.body.password
     }
-		console.log(userData);
 
     User.create(userData, function (error, user) {
       if (error) {
