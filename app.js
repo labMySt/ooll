@@ -9,6 +9,7 @@ require('./app-api/models/db');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var header_menu = require('./routes/header_menu');
+var templates = require('./routes/templates');
 var templates_menu = require('./routes/templates_menu');
 
 var routesApi = require('./app-api/routes/index');
@@ -33,7 +34,9 @@ app.use('/', index);
 app.use('/api', routesApi);
 app.use('/users', users);
 app.use('/header_menu', header_menu);
+app.use('/templates', templates);
 app.use('/templates_menu', templates_menu);
+app.use('/img', express.static('uploads'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
