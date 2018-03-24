@@ -2,19 +2,24 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from "./Header";
 import Footer from "./Footer";
+import '../styles/templates.css';
 import img from '../static/hhh.png';
 
 class Templates extends Component {
-    state = {links: []};
+    state = {links: [],
+             templates: []};
 
     componentDidMount() {
         fetch('/templates_menu')
             .then(res => res.json())
             .then(links => this.setState({ links }));
+        fetch('/templates')
+            .then(res => res.json())
+            .then(templates => this.setState({ templates }));
     }
     render() {
         return (
-            <div className="templates">
+            <div>
                 <Header />
                 <div className="content-templates">
                     <hr />
@@ -27,31 +32,16 @@ class Templates extends Component {
                         )}
                     </ul>
 
-
                     <div className="row templates-table">
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="template">
-                                <img src={img} />
-                                <a href="#">Віща школа у Британії</a>
+                        {this.state.templates.map((item, index) =>
+                            <div className="col-lg-3 col-sm-6">
+                                <div className="template">
+                                    <img src={item.img} />
+                                    <Link className="template-link" to={item.link} key={index}>{item.label}</Link>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="template">
-                                <img src={img} />
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="template">
-                                <img src={img} />
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <div className="template">
-                                <img src={img} />
-                            </div>
-                        </div>
+                        )}
                     </div>
-
 
                     <div className="row templates-table">
                         <div className="col-lg-3 col-sm-6">
