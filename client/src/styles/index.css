@@ -1,6 +1,6 @@
 @font-face{
     font-family:'Cambria Math';
-    src:url('fonts/CambriaMath.ttf') format('truetype');
+    src:url('../fonts/CambriaMath.ttf') format('truetype');
     font-weight:normal;
     font-style:normal;
 }
@@ -18,7 +18,7 @@ body {
 }
 .landing{
     height: 550px;
-    background: url("static/pc.png") no-repeat;
+    background: url("../static/pc.png") no-repeat;
 
 }
 .landing h1{
