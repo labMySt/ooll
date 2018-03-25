@@ -15,15 +15,15 @@ class PopularTemplates extends React.Component{
                 </div>
 
                 <div className="populartemplates-slider">
-                    <div class="block"><img src={pr1}/></div>
-                    <div class="block"><img src={pr2}/></div>
-                    <div class="block"><img src={pr3}/></div>
+                    <div className="block"><img src={pr1}/></div>
+                    <div className="block"><img src={pr2}/></div>
+                    <div className="block"><img src={pr3}/></div>
                 </div>
 
                 <div className="populartemplates-button">
                      <Link className="link-choose-all" to="/templates">Всі шаблони</Link>
                 </div>
-                
+
             </div>
         )
     }
