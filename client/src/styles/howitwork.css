@@ -1,43 +1,38 @@
 .howitwork{
-    width: 1540px;
-    height: 800px;
-    background-color:#e9e7e7;
-    margin:auto;
+    width: 100%;
+    min-height: 355px;
+    background-color: #e9e7e7;
+    padding-top: 37px;
+    position: relative;
 }
-.howitwork-top > p{
+.howitwork-top{
+    padding-left: 157px;
+}
+.howitwork hr{
+    width: 46px;
+    position: absolute;
+    border-top: 1px solid black;
+}
+.howitwork-top p{
     font-family: Cambria Math;
-    font-size: 30px;
-    margin-left:10px;
-    font-weight: bold;
+    font-size: 24px;
+    padding-top: 30px;
 }
 
 .howitwork-tutorial{
     width:100%;
-    height:160px;
-    
+    text-align: center;
+    padding: 26px 105px;
 }
-
 .bl-tutor{
-    display: inline-block;
-    width: 255px;
-    height: 200px;
+    text-align: center;
+}
+.bl-tutor img{
+    width: 80%;
+    text-align: center;
+}
+.bl-tutor p{
+    font-family: Cambria Math;
+    font-size: 17px;
 }
 
-.bl-tutor > p{
-    font-family: Cambria Math;
-    display: block;
-    font-size: 30px;
-    margin-left:10px;
-    font-weight: bold;
-}
-
-.b2-tutor{
-    display: inline-block;
-    position: relative;
-    margin-top: 20px;
-    width: 255px;
-    height: 200px;
-    font-family: Cambria Math;
-    font-size: 24px;
-    text-align: center;    
-}

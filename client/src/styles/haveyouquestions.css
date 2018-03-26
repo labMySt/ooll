@@ -1,0 +1,29 @@
+.questions{
+    margin: 0;
+    width: 100%;
+    height: 567px;
+    background-color: #e9e7e7;
+    position: relative;
+}
+.questions-block{
+    padding: 65px 270px 0 160px
+}
+.questions-block-text{
+    padding: 55px 115px 10px 50px;
+    display: inline-block;
+    text-decoration: none;
+    background: rgb(249, 249, 247);
+    -o-text-overflow: ellipsis;
+    margin-bottom: 70px;
+}
+.questions-block-text h6{
+    font-family: "Cambria Math";
+    color: rgb(0, 0, 0);
+    padding-top: 37px;
+}
+.questions-block-text p{
+    font-size: 14px;
+    font-family: "Cambria Math";
+    color: rgb(0, 0, 0);
+    padding-top: 19px;
+}

@@ -10,14 +10,14 @@ class PopularTemplates extends React.Component{
         return(
             <div className="populartemplates">
                 <div className="populartemplates-top">
-                     <p>_____</p>
+                     <hr />
                      <p>Популярні  шаблони</p>
                 </div>
 
-                <div className="populartemplates-slider">
-                    <div className="block"><img src={pr1}/></div>
-                    <div className="block"><img src={pr2}/></div>
-                    <div className="block"><img src={pr3}/></div>
+                <div className="populartemplates-slider row">
+                    <div className="block col-lg-4"><img src={pr1}/></div>
+                    <div className="block col-lg-4"><img src={pr2}/></div>
+                    <div className="block col-lg-4"><img src={pr3}/></div>
                 </div>
 
                 <div className="populartemplates-button">
@@ -28,7 +28,5 @@ class PopularTemplates extends React.Component{
         )
     }
 }
-
-
 
 export default PopularTemplates

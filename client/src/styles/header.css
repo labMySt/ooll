@@ -12,9 +12,9 @@
         border-bottom: 2px solid rgb(42,128,116);
     }
     .App-logo{
-        padding-left: 162px;
-        padding-bottom: 65px;
-        width: 93%;
+        padding-left: 213px;
+        padding-bottom: 51px;
+        width: 100%;
     }
     #navbarNavDropdown{
         width: 100%;
@@ -26,9 +26,9 @@
         padding: 0;
     }
     .header-links {
-        width: 97%;
-        padding-bottom: 56px;
-        padding-left: 18px;
+        width: 90%;
+        padding-bottom: 50px;
+        padding-left: 48px;
     }
 }
 @media (max-width: 991px) {
