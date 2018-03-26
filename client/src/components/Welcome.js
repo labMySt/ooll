@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import HowItWork from "./HowItWork";
 import pc from "../static/pc.png";
 import AllForSite from "./AllForSite";
+import HaveYouQuestions from "./HaveYouQuestions";
 
 class Welcome extends React.Component{
   render(){
@@ -31,10 +32,11 @@ class Welcome extends React.Component{
           <PopularTemplates />
           <HowItWork/>
           <AllForSite/>
+          <HaveYouQuestions/>
           <Footer />
       </div>
     )
   }
-};
+}
 
 export default Welcome;

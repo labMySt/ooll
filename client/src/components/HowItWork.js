@@ -17,27 +17,27 @@ class HowItWork extends React.Component{
             </div>
 
             <div className="howitwork-tutorial row">
-                <div className="bl-tutor col-lg-2">
+                <div className="bl-tutor col-lg-2 col-sm-6">
                     <img src={bl1}/>
                     <p>Зареєструйтесь на сайті</p>
                 </div>
-                <div className="bl-tutor col-lg-2">
+                <div className="bl-tutor col-lg-2 col-sm-6">
                     <img src={bl2}/>
                     <p>Перейдіть на пошту, активуйте аккаунт</p>
                 </div>
-                <div className="bl-tutor col-lg-2">
+                <div className="bl-tutor col-lg-2 col-sm-6">
                     <img src={bl3}/>
                     <p>Виберіть шаблон</p>
                 </div>
-                <div className="bl-tutor col-lg-2">
+                <div className="bl-tutor col-lg-2 col-sm-6">
                     <img src={bl4}/>
                     <p>Додайте логотип</p>
                 </div>
-                <div className="bl-tutor col-lg-2">
+                <div className="bl-tutor col-lg-2 col-sm-6">
                     <img src={bl5}/>
                     <p>Відредагуйте шаблон</p>
                 </div>
-                <div className="bl-tutor col-lg-2">
+                <div className="bl-tutor col-lg-2 col-sm-6">
                     <img src={bl6}/>
                     <p>Сайт готовий</p>
                 </div>
