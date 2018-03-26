@@ -18,15 +18,31 @@ body {
 }
 .landing{
     height: 550px;
-    background: url("../static/pc.png") no-repeat;
+    padding-top: 33px;
+    width: 100%;
+}
+.landing-text{
+    font-family: Cambria Math;
+    padding-top: 83px;
+    width: 53%;
+    text-align: right;
 
 }
-.landing h1{
-    padding-left: 185px;
-    padding-top: 125px;
+.landing-text p{
+    font-size: 47px;
+    padding-right: 53px;
+}
+.btn-landing{
+    padding-top: 42px;
+}
+.btn-landing li{
+    display: inline;
+    padding-left: 63px;
+}
+.landing-img{
+    width: 47%;
 }
 .link-create{
-    margin: 63px 0 0 143px;
     font-size: 34px;
     padding: 25px 44px;
     display: inline-block;
@@ -45,7 +61,6 @@ body {
     color: black;
     line-height: 36px;
     border: 1px solid black;
-    margin-left: 35px;
 }
 
 /*!

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import '../styles/howitwork.css';
 import bl1 from "../static/howitwork/bl1.png"
 import bl2 from "../static/howitwork/bl2.png"
@@ -13,30 +12,35 @@ class HowItWork extends React.Component{
        return(
         <div className="howitwork">
             <div className="howitwork-top">
-                <p>_____</p>
+                <hr />
                 <p>Як це працює?</p>
             </div>
 
-            <div className="howitwork-tutorial">
-                <div className="bl-tutor"><img src={bl1}/></div>
-                <div className="bl-tutor"><img src={bl2}/> </div>
-                <div className="bl-tutor"><img src={bl3}/></div>
-                <div className="bl-tutor"><img src={bl4}/></div>
-                <div className="bl-tutor"><img src={bl5}/></div>
-                <div className="bl-tutor"><img src={bl6}/></div>
-            </div>
-
-            <div className="howitwork-tutorial">
-                <div className="b2-tutor">Зареєструйтесь на сайті</div>
-                <div className="b2-tutor">Перейдіть на пошту, активуйте аккаунт</div>
-                <div className="b2-tutor">Виберіть шаблон</div>
-                <div className="b2-tutor">Додайте логотип</div>
-                <div className="b2-tutor">Відредагуйте шаблон</div>
-                <div className="b2-tutor">Сайт готовий</div>
-            </div>
-
-            <div className="populartemplates-button">
-
+            <div className="howitwork-tutorial row">
+                <div className="bl-tutor col-lg-2">
+                    <img src={bl1}/>
+                    <p>Зареєструйтесь на сайті</p>
+                </div>
+                <div className="bl-tutor col-lg-2">
+                    <img src={bl2}/>
+                    <p>Перейдіть на пошту, активуйте аккаунт</p>
+                </div>
+                <div className="bl-tutor col-lg-2">
+                    <img src={bl3}/>
+                    <p>Виберіть шаблон</p>
+                </div>
+                <div className="bl-tutor col-lg-2">
+                    <img src={bl4}/>
+                    <p>Додайте логотип</p>
+                </div>
+                <div className="bl-tutor col-lg-2">
+                    <img src={bl5}/>
+                    <p>Відредагуйте шаблон</p>
+                </div>
+                <div className="bl-tutor col-lg-2">
+                    <img src={bl6}/>
+                    <p>Сайт готовий</p>
+                </div>
             </div>
         </div>
        )
