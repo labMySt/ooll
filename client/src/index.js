@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM  from 'react-dom'
-import { BrowserRouter, Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Welcome from "./components/Welcome";
 import SignUp from "./components/SignUp";
 import Contacts from "./components/Contacts";
@@ -9,30 +9,22 @@ import Support from "./components/Support";
 import { Provider, connect } from 'react-redux';
 import {createStore} from "redux";
 import './styles/index.css';
-import reducer from './redusers/index'
 
-const store = createStore(reducer);
+import reduser from './redusers/auth';
 
-
-const mapStateToWelcomeProps = (state) => {
-  return {
-    authenticated: state.authenticated
-  }
-};
-
-const WrappedWelcome = connect(mapStateToWelcomeProps)(Welcome);
+const store = createStore(reduser);
 
 ReactDOM.render(
      <Provider store = {store}>
-        <BrowserRouter>
-        <Switch>
-            <Route exact path='/' component={WrappedWelcome}/>
+        <Router>
+        <div>
+            <Route exact path='/' component={Welcome}/>
             <Route path='/templates' component={Templates}/>
             <Route path='/contacts' component={Contacts}/>
             <Route path='/help' component={Support}/>
             <Route path='/sign_up' component={SignUp}/>
-        </Switch>
-        </BrowserRouter>
+        </div>
+        </Router>
     </Provider>,
     document.getElementById('app')
 );

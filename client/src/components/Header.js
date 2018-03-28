@@ -1,10 +1,51 @@
-import React, { Component } from 'react';
+import React from 'react';
+import cookie from 'react-cookies';
 import '../styles/header.css';
 import { Link } from 'react-router-dom';
 import logo from '../static/logo.png';
+import { connect } from 'react-redux';
+import SignUp from "./SignUp";
 
-class Header extends Component {
+import {
+  AUTH_USER,
+  UNAUTH_USER,
+  AUTH_WINDOW_OPEN,
+  AUTH_WINDOW_CLOSE
+} from '../actions/types';
+
+class Header extends React.Component {
+  constructor(props){
+    super(props);
+    this.changeRegisterWindow = this.changeRegisterWindow.bind(this);
+    this.onLogout = this.onLogout.bind(this);
+    this.changeAuthTurn = this.changeAuthTurn.bind(this);
+    this.changeAuthOn = this.changeAuthOn.bind(this);
+  }
     state = {links: []};
+
+    changeRegisterWindow = () => {
+  return {
+    type: AUTH_WINDOW_OPEN
+  }
+};
+
+changeAuthTurn = () => {
+  return{
+    type: UNAUTH_USER
+  }
+}
+
+changeAuthOn = () => {
+return {
+type: AUTH_USER
+}
+};
+
+onLogout() {
+    cookie.remove('userId');
+    this.props.dispatch(this.changeAuthTurn());
+    
+  }
 
     componentDidMount() {
         fetch('/header_menu')
@@ -12,7 +53,27 @@ class Header extends Component {
             .then(links => this.setState({ links }));
     }
     render() {
+
+      const dispatch = this.props.dispatch;
+
+      if(cookie.load('userId')){
+          dispatch(this.changeAuthOn());
+      };
+
+      let button = null;
+      if(this.props.authenticated){
+         button  = <li className = "nav-item col-lg-3" >
+                      <a className="header-link" href = "localhost:3001/api/logout">Вихід</a>
+                  </li>;
+      }
+      else
+      button  = <li className = "nav-item col-lg-3" >
+                   <a className="header-link" onClick={()=>{dispatch(this.changeRegisterWindow())}}>Вхід</a>
+               </li>;
+
+
         return (
+          <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-right header">
 
                 <div className="logo" >
@@ -31,11 +92,20 @@ class Header extends Component {
                                 <Link className="header-link" to={item.link} key={index}>{item.label}</Link>
                             </li>
                         )}
+                        {button}
                     </ul>
                 </div>
             </nav>
+            <SignUp/>
+            </div>
         );
     }
 }
+const mapStateToHeaderProps = (state) => {
+  return {
+    authenticated: state.authenticated,
+    registerWindow: state.registerWindow
+  }
+};
 
-export default Header;
+export default connect(mapStateToHeaderProps)(Header);

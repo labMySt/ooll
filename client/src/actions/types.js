@@ -1,2 +1,9 @@
-const AUTH_USER = 'auth_user';
-const UNAUTH_USER = 'unauth_user';
+export const AUTH_USER = 'auth_user';
+export const UNAUTH_USER = 'unauth_user';
+export const AUTH_WINDOW_OPEN = 'auth_window_open';
+export const AUTH_WINDOW_CLOSE = 'auth_window_close';
+export const AUTH_SHOW_REGISTER_NOT = 'auth_show_regisnter_not';
+export const AUTH_SHOW_REGISTER_YES = 'auth_show_regisnter_yes';
+export const ACTION_CHANGE_EMAIL = "action_change_email";
+export const ACTION_CHANGE_PASSWORD = "action_change_password";
+export const ACTION_CHANGE_PASSWORDCONF = "action_change_passwordconf";
