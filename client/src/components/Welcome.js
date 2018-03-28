@@ -7,10 +7,11 @@ import HowItWork from "./HowItWork";
 import pc from "../static/pc.png";
 import AllForSite from "./AllForSite";
 import HaveYouQuestions from "./HaveYouQuestions";
+import { connect } from 'react-redux';
 
 class Welcome extends React.Component{
   render(){
-    console.log(this.props);
+    console.log("welcome", this.props);
     return(
       <div className="welcome">
           <Header />
