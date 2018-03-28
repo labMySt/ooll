@@ -59,7 +59,6 @@ changePasswordConf = (payload) => {
 };
 
 sendRegister(){
-  var myHeaders = new Headers();
 
   fetch('/api/users', {
   method: 'post',
