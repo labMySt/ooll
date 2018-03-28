@@ -96,12 +96,12 @@ module.exports.usersUpdateOne = function(req, res) {
 }
 module.exports.usersLogOut = function (req, res, next) {
   if (req.session) {
-    // delete session object
     req.session.destroy(function (err) {
       if (err) {
-        return next(err);
+        sendJSONResponse(res, 404, err);
       } else {
-        return res.redirect('/');
+				return res.redirect('/');
+
       }
     });
   }

@@ -17,29 +17,29 @@ import {
 
 
 class SignUp extends React.Component{
-constructor(props){
-  super(props);
-  this.ChangeRegisterShow = this.ChangeRegisterShow.bind(this);
-  this.changeRegisterWindow = this.changeRegisterWindow.bind(this);
-}
-
-changeRegisterWindow = () => {
-return {
-type: AUTH_WINDOW_CLOSE
- }
-};
-
-ChangeRegisterShow(isShow){
-  if(isShow)
-  return{
-    type: AUTH_SHOW_REGISTER_YES
-  }
-  else
-  return{
-    type: AUTH_SHOW_REGISTER_NOT
+  constructor(props){
+      super(props);
+      this.ChangeRegisterShow = this.ChangeRegisterShow.bind(this);
+      this.changeRegisterWindow = this.changeRegisterWindow.bind(this);
   }
 
-}
+  changeRegisterWindow = () => {
+    return {
+      type: AUTH_WINDOW_CLOSE
+    }  
+  };
+
+  ChangeRegisterShow(isShow){
+    if(isShow)
+    return{
+      type: AUTH_SHOW_REGISTER_YES
+    }
+    else
+    return{
+      type: AUTH_SHOW_REGISTER_NOT
+    }
+
+  }
 
 
 

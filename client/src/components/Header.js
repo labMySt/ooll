@@ -20,6 +20,7 @@ class Header extends React.Component {
     this.onLogout = this.onLogout.bind(this);
     this.changeAuthTurn = this.changeAuthTurn.bind(this);
     this.changeAuthOn = this.changeAuthOn.bind(this);
+    this.sendRegister = this.sendRegister.bind(this);
   }
     state = {links: []};
 
@@ -36,15 +37,28 @@ changeAuthTurn = () => {
 }
 
 changeAuthOn = () => {
-return {
-type: AUTH_USER
-}
+    return {
+      type: AUTH_USER
+    }
 };
+sendRegister(){
+
+  fetch('/api/logout', {
+  method: 'GET',
+  mode: "cors",
+  credentials : "include",
+  headers: {
+    'Host': 'localhost:3001',
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  }
+})
+}
 
 onLogout() {
     cookie.remove('userId');
     this.props.dispatch(this.changeAuthTurn());
-    
+    this.sendRegister();
   }
 
     componentDidMount() {
@@ -52,6 +66,7 @@ onLogout() {
             .then(res => res.json())
             .then(links => this.setState({ links }));
     }
+
     render() {
 
       const dispatch = this.props.dispatch;
@@ -63,7 +78,7 @@ onLogout() {
       let button = null;
       if(this.props.authenticated){
          button  = <li className = "nav-item col-lg-3" >
-                      <a className="header-link" href = "localhost:3001/api/logout">Вихід</a>
+                      <a className="header-link" onClick = {this.onLogout}>Вихід</a>
                   </li>;
       }
       else
