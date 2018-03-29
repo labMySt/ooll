@@ -11,8 +11,7 @@ module.exports.usersCreate = function(req, res) {
 	if (req.body.password !== req.body.passwordConf) {
     var err = new Error('Passwords do not match.');
     err.status = 400;
-    res.send("passwords dont match");
-    return next(err);
+		sendJSONResponse(res, 400, err)
   }
 
   if (req.body.email &&
@@ -26,7 +25,8 @@ module.exports.usersCreate = function(req, res) {
 
     User.create(userData, function (error, user) {
       if (error) {
-        sendJSONResponse(res, 404, {"message": "can`t create user`"});
+				res.err = error;
+        sendJSONResponse(res, 404, {masage: "can`t create new user`"});
       } else {
         req.session.userId = user._id;
         sendJSONResponse(res, 200, user);
@@ -36,12 +36,11 @@ module.exports.usersCreate = function(req, res) {
   } else if (req.body.logemail && req.body.logpassword) {
     User.authenticate(req.body.logemail, req.body.logpassword, function (error, user) {
       if (error || !user) {
-        var err = new Error('Wrong email or password.');
-        err.status = 401;
-        return next(err);
+				console.log(error);
+					sendJSONResponse(res, 401, error);
       } else {
-        req.session.userId = user._id;
-        sendJSONResponse(res, 200, user);
+         req.session.userId = user._id;
+         sendJSONResponse(res, 200, user);
       }
     });
   } else {
