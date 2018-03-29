@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from "./Header";
 import Footer from "./Footer";
 import '../styles/templates.css';
-import img from '../static/hhh.png';
+import { Lazy } from 'react-lazy'
 
 class Templates extends Component {
     state = {links: [],
@@ -36,7 +36,9 @@ class Templates extends Component {
                         {this.state.templates.map((item, index) =>
                             <div className="col-lg-3 col-sm-6">
                                 <div className="template">
-                                    <img src={item.img} />
+                                    <Lazy component="a" className="image-link image-link--100px" ltIE9>
+                                        <img className="image-link__image" src={item.img} />
+                                    </Lazy>
                                     <Link className="template-link" to={item.link} key={index}>{item.label}</Link>
                                 </div>
                             </div>
