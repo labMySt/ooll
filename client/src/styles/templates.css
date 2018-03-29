@@ -16,16 +16,13 @@
 }
 .content-templates h5{
     padding-left: 154px;
-    padding-top: 33px;
     color: black;
     font-weight:bold;
 }
 .content-templates hr{
-    margin-top: 8px;
-    width: 23px;
-    position: absolute;
+    width: 46px;
     margin-left: 156px;
-    border-top: 2px solid black;
+    border-top: 1px solid black;
 }
 ul.hor_nav {
     padding-left: 115px;
