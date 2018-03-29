@@ -23,6 +23,9 @@ constructor(props){
   this.changePassword = this.changePassword.bind(this);
   this.changePasswordConf = this.changePasswordConf.bind(this);
   this.changeAuthRegister = this.changeAuthRegister.bind(this);
+  this.validateEmail = this.validateEmail.bind(this);
+
+  this.state = {validation: null}
 }
 
 changeAuthRegister = () => {
@@ -58,29 +61,41 @@ changePasswordConf = (payload) => {
   }
 };
 
+validateEmail()
+{
+  var re = /\S+@\S+\.\S+/;
+  return re.test(this.props.email);
+}
+
 sendRegister(){
 
-  fetch('/api/users', {
-  method: 'post',
-  mode: "cors",
-  credentials : "include",
-  headers: {
-    'Host': 'localhost:3001',
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-        email: this.props.email,
-        password: this.props.password,
-        passwordConf: this.props.passwordConf})
-}).then(res=>res.json())
-  .then(res=>
-    {if(res._id){
-      this.props.dispatch(this.changeAuthRegister());
-      this.props.dispatch(this.changeRegisterWindow());
-      cookie.save('userId', res._id,  { path: '/' });
-    }
-  });
+  if(this.validateEmail()){
+
+    fetch('/api/users', {
+    method: 'post',
+    mode: "cors",
+    credentials : "include",
+    headers: {
+      'Host': 'localhost:3001',
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+          email: this.props.email,
+          password: this.props.password,
+          passwordConf: this.props.passwordConf})
+  }).then(res=>res.json())
+    .then(res=>
+      {if(res._id){
+        this.props.dispatch(this.changeAuthRegister());
+        this.props.dispatch(this.changeRegisterWindow());
+        cookie.save('userId', res._id,  { path: '/' });
+      }else if(res.masage)
+        this.setState({validation: "Даний E-mail адрес вже зареєстрований"});
+    });
+  }else
+    this.setState({validation: "Введіть правильний E-mail адрес"});
+
 }
 
   render(){
@@ -96,6 +111,7 @@ sendRegister(){
                 onChange = {(event) => {
                 dispatch(this.changeEmail(event.target.value))
               }}/>
+              <div className="sign-in-form-validation">{this.state.validation}</div>
             <input className="sign-in-form-text" type = "password" placeholder = "Пароль"
                 onChange = {(event) => {
                 dispatch(this.changePassword(event.target.value))

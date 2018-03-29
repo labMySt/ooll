@@ -163,3 +163,9 @@
 .sign-in-cover-buttom-top{
   height: 11px;
 }
+.sign-in-form-validation{
+  height: 10px;
+  font-size: 10px;
+  font-family: Cambria Math;
+  color: red;
+}
