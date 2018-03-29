@@ -23,9 +23,11 @@ module.exports.usersCreate = function(req, res) {
       password: req.body.password
     }
 
+
     User.create(userData, function (error, user) {
       if (error) {
 				res.err = error;
+				console.log("error",error);
         sendJSONResponse(res, 404, {masage: "can`t create new user`"});
       } else {
         req.session.userId = user._id;
@@ -36,7 +38,6 @@ module.exports.usersCreate = function(req, res) {
   } else if (req.body.logemail && req.body.logpassword) {
     User.authenticate(req.body.logemail, req.body.logpassword, function (error, user) {
       if (error || !user) {
-				console.log(error);
 					sendJSONResponse(res, 401, error);
       } else {
          req.session.userId = user._id;
