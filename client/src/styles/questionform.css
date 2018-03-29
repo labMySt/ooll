@@ -1,0 +1,115 @@
+.question-sec{
+    width: 680px;
+    height: 430px;
+}
+
+.question-button{
+    margin-left: 210px;
+    font-family: Cambria Math;
+    font-size: 23px;
+    cursor: pointer;
+    padding: 21px 49px;
+    display: inline-block;
+    text-decoration: none;
+    -o-text-overflow: ellipsis;
+    color: white;
+    line-height: 36px;
+    text-align: center;
+}
+.contact-section {
+    text-align: center;
+}
+.contact-section h3 {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria Math;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 25px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 880px;
+    height: 450px;
+    text-align: left;
+}
+.contact-section form .content {
+    width: 62%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+.contact-section form .content .name,
+.contact-section form .content .email,
+.contact-section form .content .question {
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 20px;
+}
+.contact-section form .content .question {
+    padding-top: 20px;
+}
+.contact-section form .content .name label,
+.contact-section form .content .email label,
+.contact-section form .content .question label {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-family: Cambria Math;
+    font-size: 24px;
+}
+.contact-section form .content .name input[name="name"],
+.contact-section form .content .email input[name="email"]{
+    width: 100%;
+    height: 34px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #0d0d0d;
+    outline: none;
+    -webkit-appearance: none;
+}
+.contact-section form .content textarea {
+    width: 100%;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid #0d0d0d;
+    outline: none;
+    -webkit-appearance: none;
+    background: url(../static/questionform/Forma3.png) no-repeat 98% 90%;
+    background-size: 7%;
+}
+.contact-section form .content .name input[name="name"]{
+    background: url(../static/questionform/Forma1.png) no-repeat 98% 50%;
+    background-size: 6%;
+}
+.contact-section form .content .email input[name="email"]{
+    background: url(../static/questionform/Forma2.png) no-repeat 98% 50%;
+    background-size: 7%;
+}
+.btn-submit{
+    padding-right: 28%;
+    padding-top: 28px;
+}
+.contact-section form .content button {
+    margin: 0;
+    float: right;
+    background: #0d0d0d;
+    padding: 21px 51px;
+    border: 1px solid #0b0b0b;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    font-family: Cambria Math;
+    -webkit-transition: all 0.3ms;
+    -o-transition: all 0.3ms;
+    transition: all 0.3ms;
+    color: #ffffff;
+    font-size: 22px;
+}
+.contact-section form .content button:hover {
+    background: none;
+    border: 1px solid #0d0d0d;
+    color: #0d0d0d;
+}

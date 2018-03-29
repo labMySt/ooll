@@ -7,3 +7,5 @@ export const AUTH_SHOW_REGISTER_YES = 'auth_show_regisnter_yes';
 export const ACTION_CHANGE_EMAIL = "action_change_email";
 export const ACTION_CHANGE_PASSWORD = "action_change_password";
 export const ACTION_CHANGE_PASSWORDCONF = "action_change_passwordconf";
+export const ACTION_CHANGE_QUESTION = "action_change_question";
+export const ACTION_CHANGE_NAME = "action_change_name";
