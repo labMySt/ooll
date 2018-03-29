@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/haveyouquestions.css';
+import QuestionForm from "./QuestionForm";
 
 class HaveYouQuestions extends React.Component{
     render(){
@@ -18,9 +19,7 @@ class HaveYouQuestions extends React.Component{
                             після чого ви зможете приступити до роботи.</p>
                     </div>
                     <div className="col-lg-6 col-sm-6 questions-block-form">
-                        <form>
-
-                        </form>
+                        <QuestionForm />
                     </div>
                 </div>
             </div>
