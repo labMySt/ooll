@@ -5,6 +5,13 @@ var UserSchema = new mongoose.Schema({
   email: {
     type: String,
     unique: true,
+    validate: {
+          validator: function(v) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(v);
+          },
+          message: '{VALUE} is not a valid E-mail!'
+        },
     required: true,
     trim: true
   },
@@ -29,7 +36,8 @@ UserSchema.statics.authenticate = function (email, password, callback) {
         if (result === true) {
           return callback(null, user);
         } else {
-          return callback();
+          var err = new Error('password isn`t wright');
+          return callback(err, null);
         }
       })
     });

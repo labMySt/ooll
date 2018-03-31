@@ -91,7 +91,7 @@ sendRegister(){
         this.props.dispatch(this.changeRegisterWindow());
         cookie.save('userId', res._id,  { path: '/' });
       }else if(res.masage)
-        this.setState({validation: "Даний E-mail адрес вже зареєстрований"});
+        this.setState({validation: "Даний E-mail надрес вже зареєстрований"});
     });
   }else
     this.setState({validation: "Введіть правильний E-mail адрес"});

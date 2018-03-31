@@ -6,6 +6,33 @@ var sendJSONResponse = function(res, status, content) {
 	res.json(content);
 };
 
+var registrationUser = function(req, res) {
+	User.create( {email: req.body.email,
+								password: req.body.password
+								}, function (error, user) {
+										if (error) {
+											res.err = error;
+											console.log("error",error);
+											sendJSONResponse(res, 404, {masage: "can`t create new user`"});
+										} else {
+											req.session.userId = user._id;
+											sendJSONResponse(res, 200, user);
+									  }
+									});
+};
+
+var authUser = function(req, res) {
+	User.authenticate(req.body.logemail, req.body.logpassword,
+										 function (error, user) {
+												if (error || !user) {
+														sendJSONResponse(res, 401, error);
+												} else {
+													 req.session.userId = user._id;
+													 sendJSONResponse(res, 200, user);
+												}
+											});
+}
+
 module.exports.usersCreate = function(req, res) {
 
 	if (req.body.password !== req.body.passwordConf) {
@@ -14,41 +41,17 @@ module.exports.usersCreate = function(req, res) {
 		sendJSONResponse(res, 400, err)
   }
 
-  if (req.body.email &&
-    req.body.password &&
-    req.body.passwordConf) {
-
-    var userData = {
-      email: req.body.email,
-      password: req.body.password
-    }
-
-    User.create(userData, function (error, user) {
-      if (error) {
-				res.err = error;
-        sendJSONResponse(res, 404, {masage: "can`t create new user`"});
-      } else {
-        req.session.userId = user._id;
-        sendJSONResponse(res, 200, user);
-      }
-    });
+  if (req.body.email && req.body.password && req.body.passwordConf) {
+			registrationUser(req, res);
 
   } else if (req.body.logemail && req.body.logpassword) {
-    User.authenticate(req.body.logemail, req.body.logpassword, function (error, user) {
-      if (error || !user) {
-				console.log(error);
-					sendJSONResponse(res, 401, error);
-      } else {
-         req.session.userId = user._id;
-         sendJSONResponse(res, 200, user);
-      }
-    });
+			authUser(req, res);
   } else {
     var err = new Error('All fields required.');
     err.status = 400;
     sendJSONResponse(res, 404, arr);
   }
-}
+};
 
 
 module.exports.usersReadOne = function(req, res) {
