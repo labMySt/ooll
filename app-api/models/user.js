@@ -8,7 +8,7 @@ var UserSchema = new mongoose.Schema({
     validate: {
           validator: function(v) {
             var re = /\S+@\S+\.\S+/;
-            return re.test(this.props.email);
+            return re.test(v);
           },
           message: '{VALUE} is not a valid E-mail!'
         },
